@@ -22,5 +22,13 @@ To run this application locally, follow these steps:
    ```bash
    git clone https://github.com/your-username/your-repo-name.git
    cd your-repo-name
+2. **Install Dependencies**: Ensure you have Python installed, then install the required libraries:
+   ```bash
+   pip install -r requirements.txt
+
+## Usage
+**Run the application with**:
+   ```bash
+   python app.py
 
 
