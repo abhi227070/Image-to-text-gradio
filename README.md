@@ -30,5 +30,26 @@ To run this application locally, follow these steps:
 **Run the application with**:
    ```bash
    python app.py
+## Example Code:
+```python
+from transformers import pipeline
+from PIL import Image
+import gradio as gr
 
+model = None
 
+if model == None:
+    model = pipeline("image-to-text", model="Salesforce/blip-image-captioning-large")
+
+def captioner(image):
+    img = Image.fromarray(image)
+    result = model(img)[0]['generated_text']
+    return result
+
+iface = gr.Interface(
+    fn=captioner,
+    inputs=gr.Image(),
+    outputs='text'
+)
+
+iface.launch()
